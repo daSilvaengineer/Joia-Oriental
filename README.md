@@ -1,38 +1,39 @@
-# 🌸 Joia Oriental
+<p align="center">
+  <img src="store/static/store/images/logo_joia_oriental.jpg" width="180">
+</p>
 
-E-commerce desenvolvido com Django como projeto acadêmico, com foco em organização de código, separação de responsabilidades e boas práticas.
+<h1 align="center">🌸 Joia Oriental</h1>
+
+<p align="center">
+  E-commerce desenvolvido com Django<br>
+  Arquitetura em Camadas • Service Layer • Organização Modular
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Django-4.x-green?style=for-the-badge&logo=django">
+  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge">
+  <img src="https://img.shields.io/badge/License-MIT-orange?style=for-the-badge">
+</p>
 
 ---
 
-## 🚀 Tecnologias
+## 📌 Sobre o Projeto
 
-- Python 3
-- Django
-- SQLite (desenvolvimento)
-- HTML, CSS e JavaScript
+Joia Oriental é um e-commerce temático inspirado na cultura oriental (China, Japão, Índia e Turquia), desenvolvido com foco em:
+
+- Organização profissional de projeto Django
+- Separação de responsabilidades
+- Arquitetura escalável
+- Estrutura pronta para produção
 
 ---
 
 ## 🏗️ Arquitetura
 
-O projeto segue o padrão MTV do Django com organização modular:
+O projeto utiliza:
 
-- Models → Estrutura de dados
-- Views → Camada de requisição/resposta
-- Templates → Interface
-- Services → Regras de negócio separadas
+- MTV (Model-Template-View)
+- Service Layer Pattern
+- Organização modular por domínio
 
----
-
-## ▶️ Como executar localmente
-
-```bash
-git clone https://github.com/seu-usuario/joia-oriental.git
-cd joia-oriental
-
-python -m venv venv
-venv\Scripts\activate  # Windows
-
-pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
