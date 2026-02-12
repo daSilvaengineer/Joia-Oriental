@@ -1,0 +1,91 @@
+/* =========================
+   ABOUT PAGE
+========================= */
+
+.about-section {
+    padding: 110px 0;
+    background: linear-gradient(180deg, #0f0f0f, #0a0a0a);
+}
+
+/* HEADER */
+
+.about-header {
+    text-align: center;
+    margin-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centraliza horizontal */
+    justify-content: center;
+}
+
+/* LOGO CENTRALIZADA */
+
+.about-logo {
+    width: 240px;
+    max-width: 85%;
+    margin: 0 auto 25px;
+    display: block;
+    opacity: 0.95;
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease;
+}
+
+.about-logo:hover {
+    transform: scale(1.06);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(212, 175, 55, 0.35));
+}
+
+/* CONTENT */
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+
+/* BLOCK */
+
+.about-block {
+    text-align: center;
+}
+
+.about-block h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    color: var(--gold);
+    margin-bottom: 25px;
+    letter-spacing: 0.5px;
+}
+
+.about-block p {
+    font-size: 1.05rem;
+    line-height: 2;
+    color: rgba(245, 242, 233, 0.78);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+
+    .about-section {
+        padding: 80px 20px;
+    }
+
+    .about-logo {
+        width: 180px;
+        margin-bottom: 20px;
+    }
+
+    .about-block h2 {
+        font-size: 1.3rem;
+    }
+
+    .about-block p {
+        font-size: 0.95rem;
+        line-height: 1.8;
+    }
+}

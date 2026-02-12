@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Joia Oriental{% endblock %}
+
+{% block content %}
+    <section class="product-grid container">
+        {% for product in products %}
+            {% include "store/components/product_card.html" with product=product %}
+        {% empty %}
+            <p class="empty-state">Nenhuma joia disponível no momento.</p>
+        {% endfor %}
+    </section>
+{% endblock %}

@@ -1,0 +1,209 @@
+/* ===========================
+   PAYMENT – JOIA ORIENTAL
+=========================== */
+
+.payment-section {
+    padding: 4rem 0;
+}
+
+/* ===========================
+   TITLE
+=========================== */
+
+.payment-section .section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.payment-section .section-title h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: 0.5px;
+    color: #f5f2eb;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.payment-section .section-title::after,
+.payment-section .section-title h1::after {
+    display: none !important;
+    content: none !important;
+}
+
+.payment-section .section-title p {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    color: rgba(245, 242, 235, 0.7);
+}
+
+/* ===========================
+   GRID
+=========================== */
+
+.payment-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+/* ===========================
+   CARD BASE
+=========================== */
+
+.payment-card {
+    background: linear-gradient(
+        180deg,
+        rgba(18, 18, 18, 0.85),
+        rgba(18, 18, 18, 0.65)
+    );
+    border: 1px solid rgba(212, 175, 55, 0.25);
+    border-radius: 18px;
+    padding: 2.2rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    position: relative;
+    color: #f5f2eb; /* FORÇA TEXTO CLARO */
+}
+
+/* HOVER */
+.payment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+/* ===========================
+   TYPOGRAPHY
+=========================== */
+
+.payment-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.6rem;
+    color: #d4af37; /* dourado premium */
+}
+
+.payment-card p {
+    font-size: 0.95rem;
+    color: rgba(245, 242, 235, 0.85);
+    margin-bottom: 1.8rem;
+    line-height: 1.5;
+}
+
+.payment-card small {
+    color: rgba(245, 242, 235, 0.6);
+}
+
+/* ===========================
+   HIGHLIGHT – PIX À VISTA
+=========================== */
+
+.payment-card.highlight {
+    border: 1px solid rgba(212, 175, 55, 0.75);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.payment-card.highlight::before {
+    content: "RECOMENDADO";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #d4af37, #b8962e);
+    color: #111;
+    font-size: 0.65rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.6px;
+}
+
+/* ===========================
+   DISABLED
+=========================== */
+
+.payment-card.disabled {
+    opacity: 0.45;
+    border-style: dashed;
+}
+
+.payment-card.disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.payment-card .btn-primary,
+.payment-card .btn-secondary {
+    width: 100%;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+    padding: 60px 0 40px;
+    background: #0c0c0c;
+    border-top: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.footer-center {
+    max-width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-center h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--gold);
+    margin: 0;
+}
+
+.footer-center p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(245, 242, 233, 0.75);
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 26px;
+    margin-top: 8px;
+}
+
+.footer-links a {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #f5f2e9;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-copy {
+    margin-top: 26px;
+    font-size: 0.75rem;
+    color: rgba(245, 242, 233, 0.45);
+}
+

@@ -1,0 +1,24 @@
+{% load static %}
+
+<section class="featured-products container my-5">
+
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {% for product in products %}
+            {% if product.featured %}
+                <div class="col">
+                    <div class="card h-100 shadow-sm">
+                        <img src="{{ product.image.url }}" class="card-img-top" alt="{{ product.name }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ product.name }}</h5>
+                            <p class="card-text"><strong>Preço:</strong> R$ {{ product.price }}</p>
+                            <a href="{% url 'store:product_detail' product.slug %}" class="btn-primary w-100 btn-shine">
+                                Ver detalhes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+</section>

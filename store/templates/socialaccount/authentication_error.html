@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Erro de Autenticação | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="login-container">
+        <div class="login-card text-center">
+
+            <div class="login-header">
+                <h2>Não foi possível entrar</h2>
+                <p>Houve um problema com o login social</p>
+            </div>
+
+            <a href="{% url 'store:login' %}" class="btn-primary w-100">
+                Tentar novamente
+            </a>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

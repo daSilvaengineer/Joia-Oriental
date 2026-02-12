@@ -1,0 +1,78 @@
+/* ==============================
+   RESPONSIVE
+============================== */
+
+/* ---------- Tablets e celulares ---------- */
+@media (max-width: 768px) {
+
+    /* Layouts em grid */
+    .checkout-grid,
+    .product-detail-grid,
+    .collections-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Navbar */
+    .navbar-inner {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navbar-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .navbar-actions {
+        justify-content: center;
+    }
+
+    /* Hero */
+    .hero-section {
+        height: 65vh;
+        text-align: center;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        padding: 14px 30px;
+    }
+}
+
+/* ---------- Celulares pequenos ---------- */
+@media (max-width: 480px) {
+
+    body {
+        font-size: 0.9rem;
+    }
+
+    /* Hero */
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Buttons */
+    .btn-primary {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Navbar */
+    .navbar-brand {
+        font-size: 20px;
+    }
+}

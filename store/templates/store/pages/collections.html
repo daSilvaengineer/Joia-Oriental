@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Coleções | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/collections.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="collections-section">
+
+    <div class="container">
+
+       <header class="collections-header">
+          <h1>Uma jornada pelas culturas que inspiram nossas joias</h1>
+        </header>
+
+        <div class="collections-grid">
+            {% for collection in collections %}
+                <div class="collection-card">
+
+                    <div class="collection-flag">
+                        <!-- Caminho estático direto para evitar conflito -->
+                        <img src="{% static 'store/img/flags/' %}{{ collection.slug }}.svg"
+                             alt="{{ collection.name }}">
+                    </div>
+
+                    <h3>{{ collection.name }}</h3>
+
+                    <p class="collection-description">
+                        {{ collection.description }}
+                    </p>
+
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

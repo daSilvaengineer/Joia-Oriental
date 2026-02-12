@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}Entrar | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+<style>
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal {
+    position: relative;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 18px;
+    padding: 34px 30px 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    color: #f5f2e9;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.4s ease;
+}
+
+.modal h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    color: var(--gold);
+}
+
+.modal p {
+    font-size: 0.95rem;
+    color: #d6d0c6;
+}
+
+.modal button {
+    margin-top: 22px;
+}
+
+.modal-dragon {
+    position: absolute;
+    inset: 0;
+    background: url("{% static 'store/images/dragon-gold.svg' %}") no-repeat center;
+    background-size: 240px;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+
+    {% if form.non_field_errors %}
+        <div class="modal-overlay" id="errorModal">
+            <div class="modal">
+                <div class="modal-dragon"></div>
+                <h3>Algo não saiu como esperado</h3>
+                <p>Email ou senha inválidos. Verifique seus dados e tente novamente.</p>
+                <button class="btn-primary" onclick="closeModal()">Fechar</button>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="login-container">
+        <div class="login-card">
+
+            <div class="login-header">
+                <h2>Bem-vindo de volta</h2>
+                <p>Acesse sua conta Joia Oriental</p>
+            </div>
+
+            <div class="social-login">
+                <a href="{% provider_login_url 'google' %}" class="social-btn google">
+                    Entrar com Google
+                </a>
+                <a href="{% provider_login_url 'facebook' %}" class="social-btn facebook">
+                    Entrar com Facebook
+                </a>
+            </div>
+
+            <div class="divider"><span>ou</span></div>
+
+            <form method="post" class="login-form">
+                {% csrf_token %}
+
+                <div class="form-group">
+                    <label for="id_username"><b>Usuário ou Email</b></label>
+                    {{ form.username }}
+                </div>
+
+                <div class="form-group password-group">
+                    <label for="id_password"><b>Senha</b></label>
+                    <div class="password-wrapper">
+                        {{ form.password }}
+                        <button type="button"
+                                class="toggle-password"
+                                data-target="id_password">👁</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-primary w-100">
+                    Entrar
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Não tem conta?</p>
+                <a href="{% url 'store:signup' %}" class="auth-link">Criar conta</a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script>
+function closeModal() {
+    const modal = document.getElementById("errorModal");
+    if (modal) {
+        modal.style.opacity = "0";
+        setTimeout(() => modal.remove(), 250);
+    }
+}
+</script>
+
+<script src="{% static 'store/js/auth.js' %}"></script>
+{% endblock %}

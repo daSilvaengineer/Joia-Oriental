@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}Criar Conta | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+
+    <div class="login-container">
+        <div class="login-card">
+
+            <div class="login-header">
+                <h2>Crie sua conta</h2>
+                <p>Junte-se à experiência Joia Oriental</p>
+            </div>
+
+            <div class="social-login">
+                <a href="{% provider_login_url 'google' process='signup' %}" class="social-btn google">
+                    Cadastrar com Google
+                </a>
+                <a href="{% provider_login_url 'facebook' process='signup' %}" class="social-btn facebook">
+                    Cadastrar com Facebook
+                </a>
+            </div>
+
+            <div class="divider"><span>ou</span></div>
+
+            <form method="post" class="login-form">
+                {% csrf_token %}
+
+                {{ form.non_field_errors }}
+
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}">Usuário</label>
+                    {{ form.username }}
+                    {{ form.username.errors }}
+                </div>
+
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}">Email</label>
+                    {{ form.email }}
+                    {{ form.email.errors }}
+                </div>
+
+                <div class="form-group password-group">
+                    <label for="{{ form.password1.id_for_label }}">Senha</label>
+                    <div class="password-wrapper">
+                        {{ form.password1 }}
+                        <button type="button" class="toggle-password" data-target="{{ form.password1.id_for_label }}">👁</button>
+                    </div>
+                    {{ form.password1.errors }}
+                </div>
+
+                <div class="form-group password-group">
+                    <label for="{{ form.password2.id_for_label }}">Confirmar Senha</label>
+                    <div class="password-wrapper">
+                        {{ form.password2 }}
+                        <button type="button" class="toggle-password" data-target="{{ form.password2.id_for_label }}">👁</button>
+                    </div>
+                    {{ form.password2.errors }}
+                </div>
+
+                <button type="submit" class="btn-primary w-100 btn-float">
+                    Criar Conta
+                </button>
+            </form>
+
+            <div class="auth-footer">
+                <p>Já tem uma conta?</p>
+                <a href="{% url 'store:login' %}" class="auth-link">Entrar</a>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+<script src="{% static 'store/js/auth.js' %}"></script>
+{% endblock %}

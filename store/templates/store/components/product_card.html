@@ -1,0 +1,29 @@
+{% load static %}
+<article class="product-card">
+    <a href="{% url 'store:product_detail' product.slug %}" class="product-image">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% else %}
+            <img src="{% static 'store/images/product-placeholder.jpg' %}" alt="Imagem indisponível">
+        {% endif %}
+        {% if product.is_featured %}
+            <span class="product-badge">Destaque</span>
+        {% endif %}
+    </a>
+    <div class="product-info">
+        <h3 class="product-name">{{ product.name }}</h3>
+        {% if product.material %}
+            <p class="product-material">{{ product.material }}</p>
+        {% endif %}
+        <div class="product-footer">
+            <span class="product-price">R$ {{ product.price }}</span>
+            <div class="product-actions">
+                <a href="{% url 'store:product_detail' product.slug %}" class="btn-detail">Detalhes</a>
+                <form action="{% url 'store:add_to_cart' product.id %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-primary btn-shine w-100">Comprar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</article>

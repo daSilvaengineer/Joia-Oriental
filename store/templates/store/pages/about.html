@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Sobre | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/about.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="about-section">
+
+    <div class="container">
+
+        <header class="about-header">
+         <img src="{% static 'store/images/logo_joia_oriental.jpg' %}" 
+          alt="Joia Oriental"
+          class="about-logo">
+        </header>
+
+
+        <div class="about-content">
+
+            <div class="about-block">
+                <h2>Nossa Origem</h2>
+
+                <p>
+                    A Joia Oriental nasceu do fascínio pelas culturas milenares do Oriente.
+                    Entre símbolos sagrados, dinastias imperiais e tradições ancestrais,
+                    encontramos inspiração na força dos dragões chineses,
+                    na espiritualidade vibrante da Índia
+                    e na elegância serena do Japão.
+                    Cada peça carrega ecos de histórias antigas,
+                    traduzidas em formas contemporâneas.
+                </p>
+            </div>
+
+            <div class="about-block">
+                <h2>Nosso Propósito</h2>
+
+                <p>
+                    Mais do que adornos, criamos joias que expressam identidade.
+                    Nosso objetivo é unir arte, cultura e sofisticação
+                    em peças que transcendam tendências passageiras.
+                    Buscamos qualidade impecável,
+                    design atemporal
+                    e significado verdadeiro.
+                    Joia Oriental é sobre vestir história com elegância.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,48 @@
+{% load static %}
+
+<header class="navbar">
+    <div class="container navbar-inner">
+
+        <a href="{% url 'store:home' %}" class="navbar-brand">
+            <img src="{% static 'store/images/logo_joia_oriental.jpg' %}" alt="Joia Oriental">
+        </a>
+
+        <nav class="navbar-nav">
+            <a href="{% url 'store:home' %}"><b>Início</b></a>
+            <a href="{% url 'store:collections' %}"><b>Coleções</b></a>
+            <a href="{% url 'store:about' %}"><b>Sobre</b></a>
+        </nav>
+
+        <div class="navbar-actions">
+
+            <a href="{% url 'store:cart_detail' %}" class="cart-link">
+                🛒
+                {% if cart_count %}
+                    <span class="cart-count">{{ cart_count }}</span>
+                {% endif %}
+            </a>
+
+            {% if user.is_authenticated %}
+                <!-- PERFIL -->
+                <a href="{% url 'store:profile' %}" class="btn-primary btn-login">
+                    <b>{{ user.username }}</b>
+                </a>
+
+                <!-- LOGOUT -->
+                <form action="{% url 'store:logout' %}" method="post">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-primary btn-logout">
+                        <b>Sair</b>
+                    </button>
+                </form>
+            {% else %}
+                <!-- LOGIN -->
+                <a href="{% url 'store:login' %}" class="btn-primary btn-login">
+                    Entrar
+                </a>
+            {% endif %}
+
+        </div>
+
+    </div>
+</header>

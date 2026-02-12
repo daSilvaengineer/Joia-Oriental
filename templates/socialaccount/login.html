@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% load socialaccount %}
+
+{% block title %}Entrar com {{ provider.name }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-section social-auth">
+
+  <div class="login-container">
+    <div class="login-card social-card">
+
+      <div class="login-header">
+        <h2>Continuar com {{ provider.name }}</h2>
+        <p>Você será redirecionado com segurança</p>
+      </div>
+
+      <div class="social-provider-icon">
+        {% if provider.id == "google" %}
+          <img src="{% static 'store/img/google-icon.svg' %}" alt="Google">
+        {% elif provider.id == "facebook" %}
+          <img src="{% static 'store/img/facebook-icon.svg' %}" alt="Facebook">
+        {% endif %}
+      </div>
+
+      <p class="social-confirm">
+        Estamos prestes a conectar sua conta Joia Oriental com sua conta {{ provider.name }}.
+      </p>
+
+      <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="social-confirm-btn {{ provider.id }}">
+          Continuar com {{ provider.name }}
+        </button>
+      </form>
+
+      <div class="auth-footer">
+        <a href="{% url 'store:login' %}" class="auth-link">Cancelar</a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+{% endblock %}

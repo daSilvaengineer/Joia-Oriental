@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pagamento | Pedido #{{ order.id }}{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/payment.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="payment-section container">
+
+    <header class="section-title">
+        <h1>Escolha a forma de pagamento</h1>
+        <p>
+            • Total: <strong>R$ {{ order.total_paid }}</strong>
+        </p>
+    </header>
+
+    <div class="payment-options">
+
+        <!-- PIX -->
+        <form method="post" action="{% url 'store:payment_choice' order.id %}" class="payment-card">
+            {% csrf_token %}
+            <input type="hidden" name="method" value="pix">
+
+            <h3>💠 PIX</h3>
+            <p>Pagamento rápido e sem taxas.</p>
+
+            <button type="submit" class="btn-primary">
+                Pagar com PIX
+            </button>
+        </form>
+
+        <!-- PIX À VISTA -->
+        <form method="post" action="{% url 'store:payment_choice' order.id %}" class="payment-card highlight">
+            {% csrf_token %}
+            <input type="hidden" name="method" value="pix_discount">
+
+            <h3>✨ PIX à vista</h3>
+            <p>
+                Pagamento imediato.<br>
+                <small>(Desconto poderá ser aplicado futuramente)</small>
+            </p>
+
+            <button type="submit" class="btn-primary">
+                Confirmar PIX à vista
+            </button>
+        </form>
+
+        <!-- CARTÃO DE CRÉDITO -->
+        <div class="payment-card disabled">
+            <h3>💳 Cartão de crédito</h3>
+            <p>Em breve disponível.</p>
+
+            <button class="btn-secondary" disabled>
+                Indisponível
+            </button>
+        </div>
+
+    </div>
+
+    <div class="payment-footer">
+        <a href="{% url 'store:order_history' %}" class="link-muted">
+            Ver histórico de pedidos
+        </a>
+    </div>
+
+</section>
+{% endblock %}

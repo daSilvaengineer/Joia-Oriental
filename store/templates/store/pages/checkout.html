@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Checkout | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="checkout-section">
+    <header class="section-title">
+        <h1>Finalizar Pedido</h1>
+        <p class="section-subtitle">Revise suas joias e informe os dados para entrega.</p>
+    </header>
+
+    <div class="checkout-grid">
+        <aside class="checkout-summary elegant-card">
+            <h3>Resumo das Joias</h3>
+            <div class="order-items-list">
+                {% for item in items %}
+                <div class="checkout-item">
+                    <div class="item-info">
+                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
+                        <div class="item-details">
+                            <p class="item-name">{{ item.product.name }}</p>
+                            <p class="item-qty">Quantidade: {{ item.quantity }}</p>
+                        </div>
+                    </div>
+                    <span class="item-price">R$ {{ item.product.price }}</span>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="checkout-total">
+                <div class="total-row">
+                    <span>Total do Pedido</span>
+                    <span class="final-price">R$ {{ total }}</span>
+                </div>
+            </div>
+        </aside>
+
+        <div class="checkout-form-container elegant-card">
+            <h3>Dados para Entrega</h3>
+            {% if messages %}
+                {% for message in messages %}
+                    <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+
+            <form method="post" class="luxury-form">
+                {% csrf_token %}
+                <div class="form-fields">
+                    {% for field in form %}
+                        <div class="form-group">
+                            {{ field.label_tag }}
+                            {{ field }}
+                            {% if field.errors %}
+                                <div class="field-errors text-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                </div>
+
+                <div class="payment-note">
+                    <p><strong>Pagamento:</strong> O pagamento será processado via <strong>PIX</strong> na próxima etapa.</p>
+                </div>
+
+                <button type="submit" class="btn-primary btn-shine btn-float w-100">
+                    Confirmar Pedido
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

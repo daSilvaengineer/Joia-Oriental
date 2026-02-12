@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="product-section">
+    <div class="product-container">
+
+        <div class="product-image-card">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="product-info-card">
+
+            <nav class="breadcrumb">
+                <a href="{% url 'store:home' %}">Home</a>
+                {% if product.category %}
+                    / {{ product.category.name }}
+                {% endif %}
+            </nav>
+
+            <h1 class="product-title">{{ product.name }}</h1>
+
+            {% if product.material %}
+                <p class="product-material">{{ product.material }}</p>
+            {% endif %}
+
+            <div class="product-price">
+                R$ {{ product.price }}
+            </div>
+
+            <div class="product-description">
+                {{ product.description }}
+            </div>
+
+            <form method="post" action="{% url 'store:add_to_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn-primary btn-large w-100 btn-add-cart btn-shine">
+                    Adicionar ao Carrinho
+                </button>
+            </form>
+
+            <div class="product-meta">
+                <p>
+                    <strong>Disponibilidade:</strong>
+                    {% if product.stock > 0 %}
+                        Em estoque
+                    {% else %}
+                        Sob encomenda
+                    {% endif %}
+                </p>
+                <p>
+                    <strong>SKU:</strong> JOIA-{{ product.id|stringformat:"04d" }}
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

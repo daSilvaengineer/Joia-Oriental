@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Minha Conta | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+<link rel="stylesheet" href="{% static 'store/css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+
+    <div class="login-container profile-container">
+        <div class="login-card profile-card">
+
+            <div class="login-header">
+                <h2>Minha Conta</h2>
+                <p>Bem-vindo, {{ user.username }}</p>
+            </div>
+
+            <div class="profile-orders">
+                <h3>Meus Pedidos</h3>
+
+                {% if orders %}
+                    <div class="orders-list">
+                        {% for order in orders %}
+                            <div class="order-item">
+                                <div class="order-header">
+                                    <span class="order-id">
+                                        Pedido #{{ order.id }}
+                                    </span>
+                                    <span class="order-date">
+                                        {{ order.created_at|date:"d/m/Y" }}
+                                    </span>
+                                </div>
+
+                                <div class="order-body">
+                                    <span class="order-total">
+                                        R$ {{ order.total }}
+                                    </span>
+                                    <span class="order-status">
+                                        {{ order.get_status_display }}
+                                    </span>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="empty-orders">
+                        Você ainda não realizou nenhum pedido.
+                    </p>
+                {% endif %}
+            </div>
+
+            <div class="auth-footer">
+                <form method="post" action="{% url 'store:logout' %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn-primary btn-login w-100">
+                       <b>Sair da Conta</b>
+                    </button>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</section>
+{% endblock %}

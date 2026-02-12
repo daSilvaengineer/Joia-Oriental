@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Histórico de Pedidos | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/order_history.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="history-section container">
+
+    <header class="section-title">
+        <h1>Histórico de Pedidos</h1>
+        <p>Acompanhe suas aquisições e o status de cada joia.</p>
+    </header>
+
+    {% if orders %}
+        <div class="orders-list">
+            {% for order in orders %}
+                <article class="order-card">
+
+                    <header class="order-header">
+                        <div class="order-meta">
+                            <span class="order-number">Pedido #{{ order.id }}</span>
+                            <span class="order-date">
+                                {{ order.created_at|date:"d/m/Y H:i" }}
+                            </span>
+                        </div>
+
+                        <div class="order-status status-{{ order.status }}">
+                            {{ order.get_status_display }}
+                        </div>
+                    </header>
+
+                    <div class="order-body">
+                        <div class="order-items-summary">
+                            <h4>Itens</h4>
+                            <ul class="items-minimal">
+                                {% for item in order.items.all %}
+                                    <li>
+                                        <span class="qty">{{ item.quantity }}x</span>
+                                        <span class="name">{{ item.product.name }}</span>
+                                        <span class="price">
+                                            R$ {{ item.price }}
+                                        </span>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="order-total-info">
+                            <p class="label">Total Pago</p>
+                            <p class="value">
+                                R$ {{ order.total_paid }}
+                            </p>
+                        </div>
+                    </div>
+
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="empty-history">
+            <p>Você ainda não realizou nenhum pedido.</p>
+            <a href="{% url 'store:home' %}" class="btn-primary btn-shine btn-float">
+                Explorar Coleção
+            </a>
+        </div>
+    {% endif %}
+
+</section>
+{% endblock %}

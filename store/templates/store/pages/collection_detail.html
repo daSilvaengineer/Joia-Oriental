@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ category.name }} | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/collections.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="collection-detail-section">
+
+    <div class="container">
+
+        <header class="section-title">
+            <h1>{{ category.name }}</h1>
+
+            {% if category.description %}
+                <p class="section-subtitle">
+                    {{ category.description }}
+                </p>
+            {% endif %}
+        </header>
+
+        {% if products %}
+            <div class="products-grid">
+                {% for product in products %}
+                    <div class="product-card">
+
+                        <a href="{{ product.get_absolute_url }}">
+                            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                        </a>
+
+                        <div class="product-info">
+                            <h3 class="product-name">{{ product.name }}</h3>
+                            <span class="product-material">{{ product.material }}</span>
+
+                            <div class="product-footer">
+                                <span class="product-price">
+                                    R$ {{ product.price }}
+                                </span>
+
+                                <div class="product-actions">
+                                    <a href="{{ product.get_absolute_url }}" class="btn-detail">
+                                        Ver Detalhes
+                                    </a>
+
+                                    <form method="post" action="{% url 'store:add_to_cart' product.id %}">
+                                        {% csrf_token %}
+                                        <button type="submit" class="btn-detail">
+                                            Comprar
+                                        </button>
+                                    </form>
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p class="empty-orders">
+                Ainda não há joias nesta coleção.
+            </p>
+        {% endif %}
+
+    </div>
+
+</section>
+
+{% endblock %}

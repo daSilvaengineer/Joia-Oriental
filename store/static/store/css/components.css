@@ -1,0 +1,351 @@
+/* ===============================
+   NAVBAR
+=============================== */
+
+.navbar {
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(12, 12, 12, 0.78);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.45);
+}
+
+.navbar-inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 110px;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.navbar-nav a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 2px;
+    color: #f5f2e9;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav a:hover {
+    color: var(--gold);
+}
+
+/* ===============================
+   NAVBAR ACTIONS
+=============================== */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.navbar-actions form {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* ===== Carrinho ===== */
+
+.navbar .cart-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    color: #f5f2e9;
+    text-decoration: none;
+}
+
+.navbar .cart-link .cart-count {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    background: var(--gold);
+    color: #0c0c0c !important;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+    isolation: isolate;
+}
+
+/* ===============================
+   BOTÕES
+=============================== */
+
+.btn-primary {
+    position: relative;
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid rgba(212,175,55,0.45);
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    z-index: 1;
+    line-height: 1;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    background: rgba(212, 175, 55, 0.1);
+}
+
+/* ===============================
+   PRODUCT CARDS
+=============================== */
+
+.product-card {
+    background: linear-gradient(180deg, #1a1a1a, #111111);
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(212,175,55,0.18);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(212,175,55,0.45);
+    box-shadow: 
+        0 25px 60px rgba(0,0,0,0.55),
+        0 0 0 1px rgba(212,175,55,0.25);
+}
+
+
+/* ===== IMAGE ===== */
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1; /* força todas quadradas */
+    overflow: hidden;
+    background: #0c0c0c;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.05);
+}
+
+/* ===== BADGE ===== */
+
+.product-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: var(--gold);
+    color: #000;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+}
+
+/* ===== INFO ===== */
+
+.product-info {
+    padding: 22px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(212, 175, 55, 0.12);
+}
+
+/* ===== NAME ===== */
+
+.product-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #f5f2e9;
+    margin-bottom: 6px;
+    min-height: 48px; /* alinha todos */
+}
+
+/* ===== MATERIAL ===== */
+
+.product-material {
+    font-size: 0.8rem;
+    color: rgba(245, 242, 233, 0.65);
+    letter-spacing: 0.5px;
+    margin-bottom: 18px;
+    min-height: 20px;
+}
+
+/* ===== FOOTER ===== */
+
+.product-footer {
+    margin-top: auto; /* empurra para base */
+}
+
+.product-price {
+    display: block;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+/* ===== ACTIONS ===== */
+
+.product-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.product-actions form {
+    margin: 0;
+}
+
+.btn-detail {
+    padding: 10px;
+    border-radius: 30px;
+    border: 1px solid rgba(212,175,55,0.3);
+    color: #f5f2e9;
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.btn-detail:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: #f5f2e9;
+}
+
+
+/* ===============================
+   FOOTER (BLINDADO)
+=============================== */
+
+.footer {
+    width: 100%;
+    background: rgba(12, 12, 12, 0.85);
+    backdrop-filter: blur(8px);
+    border-top: 1px solid rgba(212, 175, 55, 0.25);
+    padding: 50px 0 40px;
+    margin-top: 80px;
+
+    /* blindagem contra grid/flex externos */
+    display: block;
+}
+
+.footer-inner {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-center {
+    max-width: 520px;
+    text-align: center;
+    color: #f5f2e9;
+}
+
+.footer-center h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.footer-center p {
+    font-size: 0.95rem;
+    color: #cfcac2;
+    line-height: 1.6;
+    margin-bottom: 26px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    margin-bottom: 26px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    color: #f5f2e9;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-copy {
+    font-size: 0.75rem;
+    color: rgba(245, 242, 233, 0.6);
+}
+/* ========= PROFILE – ORDERS HEADER ========= */
+
+.profile-orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.profile-orders-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+}
+
+/* Botão apagar histórico */
+.btn-danger {
+    padding: 8px 16px;
+    border-radius: 30px;
+    background: transparent;
+    border: 1px solid rgba(180, 60, 60, 0.6);
+    color: #e0b4b4;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-danger:hover {
+    background: rgba(180, 60, 60, 0.15);
+    border-color: rgba(200, 80, 80, 0.9);
+    color: #ffffff;
+}

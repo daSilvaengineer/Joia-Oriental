@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Joia Oriental{% endblock %}</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="{% static 'store/css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/layout.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/components.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/cart.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/oriental-theme.css' %}">
+    <link rel="stylesheet" href="{% static 'store/css/responsive.css' %}">
+
+    <!-- Page Specific Styles (ex: payment.css, checkout.css, profile.css) -->
+    {% block extra_head %}{% endblock %}
+</head>
+
+<body class="theme-oriental">
+
+    <!-- Navbar -->
+    {% include "store/components/navbar.html" %}
+
+    <!-- Main Content -->
+    <main class="site-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    {% include "store/components/footer.html" %}
+
+</body>
+</html>

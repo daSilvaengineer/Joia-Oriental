@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Login Cancelado | Joia Oriental{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="auth-section">
+    <div class="login-container">
+        <div class="login-card text-center">
+
+            <div class="login-header">
+                <h2>Login cancelado</h2>
+                <p>Você interrompeu a autenticação social</p>
+            </div>
+
+            <a href="{% url 'store:login' %}" class="btn-primary w-100">
+                Voltar para o login
+            </a>
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,132 @@
+.profile-container {
+    max-width: 520px;
+}
+
+/* CARD PRINCIPAL */
+.profile-card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.82);
+    border-radius: 22px;
+    padding: 38px;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    color: #f4f1ea;
+    overflow: hidden;
+}
+
+/* DRAGÃO SUTIL */
+.profile-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../img/dragon-gold.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 65%;
+    opacity: 0.035;
+    pointer-events: none;
+    transition: opacity 0.4s ease, transform 0.6s ease;
+}
+
+.profile-card:hover::before {
+    opacity: 0.06;
+    transform: scale(1.03);
+}
+
+/* PEDIDOS */
+.profile-orders {
+    margin-top: 26px;
+}
+
+.profile-orders h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+    margin-bottom: 16px;
+    color: var(--gold);
+    letter-spacing: 0.4px;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.order-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    border-radius: 14px;
+    padding: 14px 16px;
+    transition: transform 0.25s ease;
+}
+
+.order-item:hover {
+    transform: translateY(-2px);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    opacity: 0.75;
+    margin-bottom: 6px;
+}
+
+.order-id {
+    font-weight: 600;
+    color: #f5f2e9;
+}
+
+.order-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total {
+    color: var(--gold);
+    font-weight: 600;
+}
+
+.order-status {
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    background: rgba(212, 175, 55, 0.15);
+    color: var(--gold);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+/* ESTADO VAZIO */
+.empty-orders {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    padding: 22px;
+    text-align: center;
+    border: 1px dashed rgba(212, 175, 55, 0.25);
+    color: #d6d2c8;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .profile-container {
+        padding: 0 16px;
+    }
+
+    .profile-card {
+        padding: 30px 24px;
+    }
+
+    .order-item {
+        padding: 12px 14px;
+    }
+
+    .order-body {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}

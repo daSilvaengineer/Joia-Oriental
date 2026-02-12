@@ -1,0 +1,311 @@
+.auth-section {
+    min-height: calc(100vh - 120px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.login-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.login-card {
+    background: rgba(0, 0, 0, 0.78);
+    border-radius: 18px;
+    padding: 38px 34px;
+    box-shadow: 0 20px 55px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #f5f2e9;
+    width: 100%;
+    max-width: 420px;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.login-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.login-header p {
+    color: var(--gold);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.social-btn {
+    display: block;
+    text-align: center;
+    padding: 12px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    width: 100%;
+}
+
+.social-btn.google {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.social-btn.google:hover {
+    background: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+.social-btn.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.social-btn.facebook:hover {
+    background: #145dbf;
+    transform: translateY(-2px);
+}
+
+.divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    font-size: 0.8rem;
+    color: #cfcac2;
+    letter-spacing: 1px;
+}
+
+.divider span {
+    background: rgba(0, 0, 0, 0.78);
+    padding: 0 12px;
+    position: relative;
+    z-index: 2;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent);
+    z-index: 1;
+}
+
+.form-group {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: #cfcac2;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(212, 175, 55, 0.35);
+    background: rgba(255,255,255,0.04);
+    color: #fff;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.15);
+    background: rgba(255,255,255,0.06);
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding-right: 42px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 14px;
+    background: none;
+    border: none;
+    color: var(--gold);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.toggle-password:hover {
+    opacity: 0.7;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    border-radius: 30px;
+}
+
+.auth-footer {
+    margin-top: 26px;
+    text-align: center;
+}
+
+.auth-footer p {
+    margin-bottom: 6px;
+    font-size: 0.9rem;
+    color: #cfcac2;
+}
+
+.auth-link {
+    color: var(--gold);
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.auth-link:hover {
+    opacity: 0.7;
+}
+
+@media (max-width: 480px) {
+    .login-card {
+        padding: 28px 22px;
+    }
+
+    .social-btn {
+        font-size: 0.85rem;
+        padding: 10px;
+    }
+}
+
+.social-auth .login-card {
+    text-align: center;
+    max-width: 400px;
+}
+
+.social-provider-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0 18px;
+}
+
+.social-provider-icon img {
+    width: 42px;
+    height: auto;
+    display: block;
+}
+
+.social-confirm {
+    color: #cfcac2;
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.social-confirm-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.social-confirm-btn.google {
+    background: #ffffff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.social-confirm-btn.google:hover {
+    background: #f1f1f1;
+    transform: translateY(-2px);
+}
+
+.social-confirm-btn.facebook {
+    background: #1877f2;
+    color: white;
+}
+
+.social-confirm-btn.facebook:hover {
+    background: #145dbf;
+    transform: translateY(-2px);
+}
+
+.btn-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.35) 50%,
+        rgba(255,255,255,0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: left 0.6s ease;
+}
+
+.btn-shine:hover::after {
+    left: 130%;
+}
+
+.btn-float {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-float:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+.toggle-password.active {
+    animation: eyeBlink 0.25s ease;
+}
+
+@keyframes eyeBlink {
+    0%   { transform: scaleY(1); }
+    50%  { transform: scaleY(0.2); }
+    100% { transform: scaleY(1); }
+}
