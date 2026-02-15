@@ -37,3 +37,9 @@ O projeto utiliza:
 - Service Layer Pattern
 - Organização modular por domínio
 
+# 🛍️ Joia Oriental
+
+E-commerce desenvolvido em Django com autenticação social e painel administrativo.
+
+🔗 **Acesse o site:**  
+👉 https://dasilvaengineer.pythonanywhere.com/
