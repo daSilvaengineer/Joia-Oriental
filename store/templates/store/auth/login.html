@@ -6,68 +6,7 @@
 
 {% block extra_head %}
 <link rel="stylesheet" href="{% static 'store/css/auth.css' %}">
-<style>
-.modal-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(10, 10, 10, 0.75);
-    backdrop-filter: blur(6px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 2000;
-}
 
-.modal {
-    position: relative;
-    background: rgba(15, 15, 15, 0.95);
-    border: 1px solid rgba(212, 175, 55, 0.45);
-    border-radius: 18px;
-    padding: 34px 30px 30px;
-    max-width: 420px;
-    width: 100%;
-    text-align: center;
-    color: #f5f2e9;
-    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
-    animation: fadeInUp 0.4s ease;
-}
-
-.modal h3 {
-    font-family: "Playfair Display", serif;
-    font-size: 1.4rem;
-    margin-bottom: 12px;
-    color: var(--gold);
-}
-
-.modal p {
-    font-size: 0.95rem;
-    color: #d6d0c6;
-}
-
-.modal button {
-    margin-top: 22px;
-}
-
-.modal-dragon {
-    position: absolute;
-    inset: 0;
-    background: url("{% static 'store/images/dragon-gold.svg' %}") no-repeat center;
-    background-size: 240px;
-    opacity: 0.06;
-    pointer-events: none;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(12px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-</style>
 {% endblock %}
 
 {% block content %}
