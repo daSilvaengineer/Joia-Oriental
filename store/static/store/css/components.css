@@ -1,6 +1,4 @@
-/* ===============================
-   NAVBAR
-=============================== */
+
 
 .navbar {
     padding: 14px 0;
@@ -42,9 +40,7 @@
     color: var(--gold);
 }
 
-/* ===============================
-   NAVBAR ACTIONS
-=============================== */
+
 
 .navbar-actions {
     display: flex;
@@ -58,7 +54,7 @@
     align-items: center;
 }
 
-/* ===== Carrinho ===== */
+
 
 .navbar .cart-link {
     position: relative;
@@ -88,9 +84,7 @@
     isolation: isolate;
 }
 
-/* ===============================
-   BOTÕES
-=============================== */
+
 
 .btn-primary {
     position: relative;
@@ -115,9 +109,7 @@
     background: rgba(212, 175, 55, 0.1);
 }
 
-/* ===============================
-   PRODUCT CARDS
-=============================== */
+
 
 .product-card {
     background: linear-gradient(180deg, #1a1a1a, #111111);
@@ -139,12 +131,12 @@
 }
 
 
-/* ===== IMAGE ===== */
+
 
 .product-image {
     position: relative;
     width: 100%;
-    aspect-ratio: 1 / 1; /* força todas quadradas */
+    aspect-ratio: 1 / 1; 
     overflow: hidden;
     background: #0c0c0c;
 }
@@ -160,7 +152,7 @@
     transform: scale(1.05);
 }
 
-/* ===== BADGE ===== */
+
 
 .product-badge {
     position: absolute;
@@ -175,7 +167,7 @@
     letter-spacing: 0.5px;
 }
 
-/* ===== INFO ===== */
+
 
 .product-info {
     padding: 22px 20px 24px;
@@ -186,7 +178,7 @@
     border-top: 1px solid rgba(212, 175, 55, 0.12);
 }
 
-/* ===== NAME ===== */
+
 
 .product-name {
     font-family: 'Playfair Display', serif;
@@ -194,10 +186,10 @@
     font-weight: 500;
     color: #f5f2e9;
     margin-bottom: 6px;
-    min-height: 48px; /* alinha todos */
+    min-height: 48px;
 }
 
-/* ===== MATERIAL ===== */
+
 
 .product-material {
     font-size: 0.8rem;
@@ -207,10 +199,10 @@
     min-height: 20px;
 }
 
-/* ===== FOOTER ===== */
+
 
 .product-footer {
-    margin-top: auto; /* empurra para base */
+    margin-top: auto; 
 }
 
 .product-price {
@@ -221,7 +213,7 @@
     margin-bottom: 16px;
 }
 
-/* ===== ACTIONS ===== */
+
 
 .product-actions {
     display: grid;
@@ -250,9 +242,7 @@
 }
 
 
-/* ===============================
-   FOOTER (BLINDADO)
-=============================== */
+
 
 .footer {
     width: 100%;
@@ -261,8 +251,6 @@
     border-top: 1px solid rgba(212, 175, 55, 0.25);
     padding: 50px 0 40px;
     margin-top: 80px;
-
-    /* blindagem contra grid/flex externos */
     display: block;
 }
 
@@ -315,7 +303,7 @@
     font-size: 0.75rem;
     color: rgba(245, 242, 233, 0.6);
 }
-/* ========= PROFILE – ORDERS HEADER ========= */
+
 
 .profile-orders-header {
     display: flex;
@@ -330,7 +318,7 @@
     letter-spacing: 1px;
 }
 
-/* Botão apagar histórico */
+
 .btn-danger {
     padding: 8px 16px;
     border-radius: 30px;
