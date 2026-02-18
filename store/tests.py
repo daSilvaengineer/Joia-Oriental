@@ -7,17 +7,17 @@ from store.models import Product, Category
 class ProductModelTest(TestCase):
 
     def setUp(self):
-        # Criar categoria de teste
+        
         self.category = Category.objects.create(name="Colares")
 
-        # Criar imagem de teste
+      
         self.test_image = SimpleUploadedFile(
             name='test.jpg',
             content=b'file_content',
             content_type='image/jpeg'
         )
 
-        # Criar produto de teste
+        
         self.product = Product.objects.create(
             name="Colar Dragão",
             description="Colar oriental artesanal",
