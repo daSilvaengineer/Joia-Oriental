@@ -309,3 +309,47 @@
     50%  { transform: scaleY(0.2); }
     100% { transform: scaleY(1); }
 }
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(6px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.modal {
+    position: relative;
+    background: rgba(15, 15, 15, 0.95);
+    border: 1px solid rgba(212, 175, 55, 0.45);
+    border-radius: 18px;
+    padding: 34px 30px 30px;
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    color: #f5f2e9;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.6);
+    animation: fadeInUp 0.4s ease;
+}
+
+.modal-dragon {
+    position: absolute;
+    inset: 0;
+    background: url("../img/logo_cart.png") no-repeat center;
+    background-size: 240px;
+    opacity: 0.06;
+    pointer-events: none;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
