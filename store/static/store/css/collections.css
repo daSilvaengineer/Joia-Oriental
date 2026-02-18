@@ -1,6 +1,4 @@
-/* =========================
-   COLLECTIONS PAGE
-========================= */
+
 
 .collections-section {
     padding: 80px 0 100px;
@@ -24,7 +22,7 @@
     font-size: 1rem;
 }
 
-/* GRID */
+
 
 .collections-grid {
     display: grid;
@@ -32,7 +30,7 @@
     gap: 40px;
 }
 
-/* CARD */
+
 
 .collection-card {
     text-align: center;
@@ -49,7 +47,7 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
 
-/* BANDEIRA REDONDA */
+
 
 .collection-flag {
     width: 110px;
@@ -72,7 +70,7 @@
     object-fit: cover;
 }
 
-/* TITULO */
+
 
 .collection-card h3 {
     font-family: 'Playfair Display', serif;
@@ -81,7 +79,7 @@
     margin-bottom: 12px;
 }
 
-/* DESCRIÇÃO POÉTICA */
+
 
 .collection-card p {
     font-size: 0.9rem;
