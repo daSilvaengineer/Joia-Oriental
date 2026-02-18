@@ -2,7 +2,7 @@
     max-width: 520px;
 }
 
-/* CARD PRINCIPAL */
+
 .profile-card {
     position: relative;
     background: rgba(0, 0, 0, 0.82);
@@ -15,7 +15,7 @@
     overflow: hidden;
 }
 
-/* DRAGÃO SUTIL */
+
 .profile-card::before {
     content: "";
     position: absolute;
@@ -34,7 +34,7 @@
     transform: scale(1.03);
 }
 
-/* PEDIDOS */
+
 .profile-orders {
     margin-top: 26px;
 }
@@ -99,7 +99,6 @@
     text-transform: uppercase;
 }
 
-/* ESTADO VAZIO */
 .empty-orders {
     background: rgba(255, 255, 255, 0.03);
     border-radius: 16px;
@@ -110,7 +109,7 @@
     font-size: 0.9rem;
 }
 
-/* RESPONSIVO */
+
 @media (max-width: 600px) {
     .profile-container {
         padding: 0 16px;
