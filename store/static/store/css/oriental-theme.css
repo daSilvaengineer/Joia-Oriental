@@ -1,7 +1,4 @@
-/* =========================
-   ORIENTAL THEME (GLOBAL)
-   Apenas atmosfera visual
-========================= */
+
 
 body.theme-oriental {
     background: url("/static/store/images/hero-oriental.jpg") no-repeat center center fixed;
@@ -9,7 +6,6 @@ body.theme-oriental {
     position: relative;
 }
 
-/* Overlay escuro elegante */
 body.theme-oriental::before {
     content: "";
     position: fixed;
@@ -21,7 +17,7 @@ body.theme-oriental::before {
     z-index: -1;
 }
 
-/* Garantia de leitura acima do overlay */
+
 main,
 .navbar,
 .footer,
