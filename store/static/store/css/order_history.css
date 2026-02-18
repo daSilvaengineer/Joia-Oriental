@@ -1,6 +1,4 @@
-/* =========================
-   HISTORY SECTION
-========================= */
+
 
 .history-section {
     padding: 70px 0;
@@ -23,9 +21,6 @@
     letter-spacing: 1px;
 }
 
-/* =========================
-   ORDERS LIST
-========================= */
 
 .orders-list {
     display: flex;
@@ -33,9 +28,7 @@
     gap: 30px;
 }
 
-/* =========================
-   ORDER CARD
-========================= */
+
 
 .order-card {
     background: linear-gradient(180deg, #141414, #0e0e0e);
@@ -51,9 +44,6 @@
     box-shadow: 0 25px 55px rgba(0,0,0,0.65);
 }
 
-/* =========================
-   HEADER
-========================= */
 
 .order-header {
     display: flex;
@@ -78,9 +68,7 @@
     color: #bdb7ac;
 }
 
-/* =========================
-   STATUS
-========================= */
+
 
 .order-status {
     padding: 6px 14px;
@@ -101,9 +89,7 @@
     color: #e0ddd5;
 }
 
-/* =========================
-   BODY
-========================= */
+
 
 .order-body {
     display: grid;
@@ -141,9 +127,7 @@
     font-weight: 500;
 }
 
-/* =========================
-   TOTAL
-========================= */
+
 
 .order-total-info {
     text-align: right;
@@ -161,9 +145,7 @@
     color: var(--gold);
 }
 
-/* =========================
-   EMPTY STATE
-========================= */
+
 
 .empty-history {
     text-align: center;
@@ -175,9 +157,7 @@
     color: #cfcac2;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
 
 @media (max-width: 768px) {
     .order-body {
