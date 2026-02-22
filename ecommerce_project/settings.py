@@ -3,7 +3,7 @@ import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = 'django-insecure-f^j5#6g%c&h2-(gc-@oz$8_ji7a7=h=yk8r@6oy=ia*o0nd8&b'
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-inseguro-apenas-dev')
 
 DEBUG = True
 
