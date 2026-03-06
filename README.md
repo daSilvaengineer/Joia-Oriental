@@ -452,7 +452,7 @@ kanban
 | Documento | Descrição |
 |-----------|-----------|
 | [`docs/`](docs/) | Pasta de documentação do projeto |
-| [Documentação RUP Interativa](docs/index.html) | Dashboard completo com UML, Scrum e métricas |
+| [Documentação RUP Interativa](docs/docs-joia-oriental.html) | Dashboard completo com UML, Scrum e métricas |
 
 ---
 
